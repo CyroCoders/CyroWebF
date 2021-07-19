@@ -1,0 +1,5 @@
+@import url("gravity.css");
+@import url("card.css");
+.box {
+    display: flex;
+}
