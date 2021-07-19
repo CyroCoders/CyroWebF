@@ -10,3 +10,4 @@ function include(file) {
     document.getElementsByTagName('body')[0].appendChild(script);
 }
 include("gravity.js");
+include("card.js");
