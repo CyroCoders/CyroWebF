@@ -1,5 +1,16 @@
 @import url("gravity.css");
 @import url("card.css");
+@import url("navigation.css");
+
 .box {
-    display: flex;
+    display: flex !important;
+}
+
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+* {
+    box-sizing: border-box !important;
 }
