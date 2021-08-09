@@ -24,16 +24,16 @@ html, body {
     width: 100vw;
 }
 
-.maxContainer {
+.containerMax {
     width: 100vw;
     height: 100vh;
 }
 
-.maxHeight {
+.containerHeight {
     height: inherit;
 }
 
-.maxWidth {
+.containerWidth {
     width: inherit;
 }
 
