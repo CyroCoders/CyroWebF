@@ -1,6 +1,7 @@
 @import url("gravity.css");
 @import url("card.css");
 @import url("navigation.css");
+
 .box {
     display: flex !important;
 }
@@ -8,6 +9,32 @@
 html, body {
     margin: 0 !important;
     padding: 0 !important;
+}
+
+.fullScreen {
+    width: 100vw;
+    height: 100vh;
+}
+
+.fullHeight {
+    height: 100vh;
+}
+
+.fullWidth {
+    width: 100vw;
+}
+
+.maxContainer {
+    width: 100vw;
+    height: 100vh;
+}
+
+.maxHeight {
+    height: inherit;
+}
+
+.maxWidth {
+    width: inherit;
 }
 
 * {
