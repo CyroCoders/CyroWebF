@@ -1,5 +1,8 @@
 nav {
     position: fixed;
+    display: flex;
+    width: 100vw;
+    justify-content: space-between;
 }
 
 nav.top {
@@ -24,4 +27,58 @@ nav.right {
     position: fixed;
     right: 0;
     top: 0;
+}
+
+nav .nav-brand {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+nav .nav-brand img {
+    width: 32px;
+    height: 32px;
+    margin: 20px;
+}
+
+nav .nav-toggle, nav .nav-toggle {
+    margin: 20px;
+    display: none
+}
+
+nav .nav-toggle, nav .nav-toggle .hamburger {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+nav .nav-links {
+    margin-right: 100px;
+    display: block;
+}
+
+nav .nav-links ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+}
+
+nav .nav-links ul li {
+    list-style: none;
+    padding-inline: 20px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+nav div.nav-links ul li a {
+    text-decoration: inherit;
+    color: inherit;
+    height: 72px;
+    padding-block: 24px;
 }
