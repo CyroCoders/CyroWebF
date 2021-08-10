@@ -1,0 +1,27 @@
+nav {
+    position: fixed;
+}
+
+nav.top {
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+nav.bottom {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+nav.left {
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+nav.right {
+    position: fixed;
+    right: 0;
+    top: 0;
+}
