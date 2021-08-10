@@ -11,16 +11,16 @@ class NavigationBar {
         this.makeNav(options);
         switch(options.barPosition){
             case this.TOP:
-                this.nav.className = this.nav.className + ' top';
+                this.nav.className = "top";
                 break;
             case this.BOTTOM:
-                this.nav.className = this.nav.className + ' bottom';
+                this.nav.className = "bottom";
                 break;
             case this.LEFT:
-                this.nav.className = this.nav.className + ' left';
+                this.nav.className = "left";
                 break;
             case this.RIGHT:
-                this.nav.className = this.nav.className + ' right';
+                this.nav.className = "right";
                 break;
         }
 
@@ -37,24 +37,44 @@ class NavigationBar {
         this.navBrand = document.createElement('div');
         this.navBrand.appendChild(this.navBrandLogo);
         this.navBrand.appendChild(this.navBrandName);
-        this.navBrand.id = "nav-brand"
+        this.navBrand.className = "nav-brand";
+
+        this.makeNavToggle();
 
         this.navLinks = document.createElement('div');
-        for (const [key, value] of Object.entries(this.navLinkItems)) {
-            this.navLinks.appendChild(value);
-        }
+        this.navLinks.appendChild(this.navLinkItemsList);
+        this.navLinks.className = "nav-links"
 
         this.nav = document.createElement('nav');
         this.nav.appendChild(this.navBrand);
+        this.nav.appendChild(this.navToggle);
+        this.nav.appendChild(this.navLinks);
     }
 
     makeNavLinkItems(links) {
-        console.log(links)
-        this.navLinkItems = {};
+        this.navLinkItemsList = document.createElement('ul');
         links.forEach((link) => {
-            this.navLinkItems[link.buttonText] = document.createElement('div')
-            this.navLinkItems[link.buttonText].innerHTML = link.buttonText
+            var navLinkItem = document.createElement('li')
+            var navLinkHref = document.createElement('a')
+            navLinkHref.href = link.buttonHREF
+            navLinkHref.innerHTML = link.buttonText
+            navLinkItem.appendChild(navLinkHref)
+            this.navLinkItemsList.appendChild(navLinkItem)
         });
+    }
+
+    makeNavToggle() {
+        this.navToggleHamburger = document.createElement('img');
+        this.navToggleHamburger.src = "/icon/menu-outline.svg";
+        this.navToggleHamburger.className = this.navToggleHamburger.className + " hamburger"
+
+        this.navToggle = document.createElement('div');
+        this.navToggle.appendChild(this.navToggleHamburger);
+        this.navToggle.className = "nav-toggle";
+    }
+
+    toggleNavigation() {
+        
     }
 }
 
