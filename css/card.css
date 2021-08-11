@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: center;
 }
+
 .card {
     --border-corner: 20px;
     --padding: 20px;

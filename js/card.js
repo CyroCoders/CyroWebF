@@ -1,3 +1,5 @@
+cardReady.initEvent('cardReady', true, true);
+
 window.addEventListener('mousemove', (e) => {
     x = e.pageX - window.scrollX;
     y = e.pageY - window.scrollY;
@@ -45,3 +47,7 @@ reset = (target) => {
 rangeMap = (number, inMin, inMax, outMin, outMax) => {
     return (number - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
 }
+
+document.dispatchEvent(cardReady);
+
+//optimise

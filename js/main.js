@@ -6,8 +6,15 @@ function include(file) {
     var script  = document.createElement('script');
     script.src  = currentDir + "/" + file;
     script.type = 'text/javascript';
-    script.defer = true;
-    document.getElementsByTagName('body')[0].appendChild(script);
+
+    document.currentScript.after(script);
+    document.head.appendChild(script);
 }
+
+var cardReady = document.createEvent('Event');
+
+var navigationReady = document.createEvent('Event');
+
+include("navigation.js");
 include("gravity.js");
 include("card.js");

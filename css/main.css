@@ -11,6 +11,32 @@ html, body {
     padding: 0 !important;
 }
 
+.fullScreen {
+    width: 100vw;
+    height: 100vh;
+}
+
+.fullHeight {
+    height: 100vh;
+}
+
+.fullWidth {
+    width: 100vw;
+}
+
+.containerMax {
+    width: 100vw;
+    height: 100vh;
+}
+
+.containerHeight {
+    height: inherit;
+}
+
+.containerWidth {
+    width: inherit;
+}
+
 * {
     box-sizing: border-box !important;
 }
