@@ -25,6 +25,8 @@ class NavigationBar {
         }
 
         container.appendChild(this.nav);
+        this.showNavToggle(window.innerWidth < 690)
+        window.addEventListener('resize',() => {this.showNavToggle(window.innerWidth < 690)});
     }
 
     makeNav(options) {
@@ -37,13 +39,13 @@ class NavigationBar {
         this.navBrand = document.createElement('div');
         this.navBrand.appendChild(this.navBrandLogo);
         this.navBrand.appendChild(this.navBrandName);
-        this.navBrand.className = "nav-brand";
+        this.navBrand.classList.add("nav-brand");
 
         this.makeNavToggle();
 
         this.navLinks = document.createElement('div');
         this.navLinks.appendChild(this.navLinkItemsList);
-        this.navLinks.className = "nav-links"
+        this.navLinks.classList.add("nav-links");
 
         this.nav = document.createElement('nav');
         this.nav.appendChild(this.navBrand);
@@ -66,16 +68,47 @@ class NavigationBar {
     makeNavToggle() {
         this.navToggleHamburger = document.createElement('img');
         this.navToggleHamburger.src = "/icon/menu-outline.svg";
-        this.navToggleHamburger.className = this.navToggleHamburger.className + " hamburger"
+        this.navToggleHamburger.classList.add("hamburger");
 
         this.navToggle = document.createElement('div');
         this.navToggle.appendChild(this.navToggleHamburger);
-        this.navToggle.className = "nav-toggle";
+        this.navToggle.classList.add("nav-toggle");
+        this.navToggle.addEventListener('click', ()=>{this.toggleNavigation()})
     }
 
     toggleNavigation() {
-        
+        console.log(this.navToggleHamburger.src,window.origin+"/icon/menu-outline.svg")
+        if(this.navToggleHamburger.src === window.origin+"/icon/menu-outline.svg") {
+            this.navToggleHamburger.src = "/icon/close-outline.svg";
+            this.nav.classList.add("expanded");
+            this.nav.classList.remove("collapsed");
+            this.navLinks.style.display = "block";
+        } else
+        if(this.navToggleHamburger.src === window.origin+"/icon/close-outline.svg") {
+            this.navToggleHamburger.src = "/icon/menu-outline.svg";
+            this.nav.classList.add("collapsed");
+            this.nav.classList.remove("expanded");
+            this.navLinks.style.display = "none";
+        }
+
     }
-}
+
+    showNavToggle(visible) {
+        if(visible){
+            this.navToggle.style.display = "block";
+            this.navLinks.style.display = "none";
+            this.nav.classList.add("collapsible");
+            toggleNavigation();
+            toggleNavigation();
+        }
+        else {
+            this.navToggle.style.display = "none";
+            this.navLinks.style.display = "block";
+            this.nav.classList.remove("expanded");
+            this.nav.classList.remove("collapsed");
+            this.nav.classList.remove("collapsible");
+        }
+    }
+};
 
 document.dispatchEvent(navigationReady);
