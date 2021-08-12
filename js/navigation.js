@@ -23,9 +23,9 @@ class NavigationBar {
                 this.nav.className = "right";
                 break;
         }
-
+        this.nav.style.setProperty("--collapse-background",options.collapseBackground)
         container.appendChild(this.nav);
-        this.showNavToggle(window.innerWidth < 690)
+        this.showNavToggle(window.innerWidth < 690);
         window.addEventListener('resize',() => {this.showNavToggle(window.innerWidth < 690)});
     }
 
@@ -76,37 +76,45 @@ class NavigationBar {
         this.navToggle.addEventListener('click', ()=>{this.toggleNavigation()})
     }
 
-    toggleNavigation() {
-        console.log(this.navToggleHamburger.src,window.origin+"/icon/menu-outline.svg")
+    toggleNavigation(open) {
+        if (typeof(open) !== 'undefined') {
+            if(open) {
+                this.navToggleHamburger.src = "/icon/close-outline.svg";
+                this.nav.classList.add("expanded");
+                this.nav.classList.remove("collapsed");
+                //this.navLinks.style.display = "block";
+            } else
+            if(!open) {
+                this.navToggleHamburger.src = "/icon/menu-outline.svg";
+                this.nav.classList.add("collapsed");
+                this.nav.classList.remove("expanded");
+                //this.navLinks.style.display = "none";
+            }
+        } else
         if(this.navToggleHamburger.src === window.origin+"/icon/menu-outline.svg") {
             this.navToggleHamburger.src = "/icon/close-outline.svg";
             this.nav.classList.add("expanded");
             this.nav.classList.remove("collapsed");
-            this.navLinks.style.display = "block";
         } else
         if(this.navToggleHamburger.src === window.origin+"/icon/close-outline.svg") {
             this.navToggleHamburger.src = "/icon/menu-outline.svg";
             this.nav.classList.add("collapsed");
             this.nav.classList.remove("expanded");
-            this.navLinks.style.display = "none";
         }
-
     }
 
     showNavToggle(visible) {
         if(visible){
             this.navToggle.style.display = "block";
-            this.navLinks.style.display = "none";
             this.nav.classList.add("collapsible");
-            toggleNavigation();
-            toggleNavigation();
+            this.toggleNavigation(false);
         }
         else {
             this.navToggle.style.display = "none";
-            this.navLinks.style.display = "block";
             this.nav.classList.remove("expanded");
             this.nav.classList.remove("collapsed");
             this.nav.classList.remove("collapsible");
+            this.toggleNavigation(true);
         }
     }
 };

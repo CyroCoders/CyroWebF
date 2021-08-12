@@ -5,7 +5,7 @@ nav {
     justify-content: space-between;
 }
 
-nav.collapsible.expanded {
+nav.collapsible {
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -72,9 +72,24 @@ nav .nav-links {
     display: block;
 }
 
+nav.collapsible .nav-links {
+    width: 50vw;
+    height: 100vh;
+    background-color: var(--collapse-background);
+}
+
+nav.collapsible.collapsed .nav-links {
+    margin-right: 100px;
+    display: block;
+    transform: translateX(-100%);
+    transition: .3s ease-in-out;
+}
+
 nav.collapsible.expanded .nav-links {
     margin-right: 100px;
     display: block;
+    transform: translateX(0%);
+    transition: .3s ease-in-out;
 }
 
 nav .nav-links ul {
@@ -84,7 +99,7 @@ nav .nav-links ul {
     margin: 0;
 }
 
-nav.collapsible.expanded .nav-links ul {
+nav.collapsible .nav-links ul {
     display: flex;
     flex-direction: column;
     align-items: baseline;
