@@ -1,6 +1,6 @@
 scripts = document.getElementsByTagName("script");
 currentLoc = (scripts[scripts.length-1].src);
-currentDir = currentLoc.split("/")[0,currentLoc.split("/").length-2]
+currentDir = currentLoc.split("/").slice(0,currentLoc.split("/").length-1).join("/")
 
 function include(file) {
     var script  = document.createElement('script');
