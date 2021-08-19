@@ -1,0 +1,18 @@
+.cardContainer {
+    perspective: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    --border-corner: 20px;
+    --padding: 20px;
+    border-radius: var(--border-corner);
+    padding: var(--padding);
+    box-sizing: border-box;
+}
+
+.card.followMouse {
+    transition: all 0.2s;
+}

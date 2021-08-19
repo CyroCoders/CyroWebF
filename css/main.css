@@ -1,0 +1,43 @@
+@import url("gravity.css");
+@import url("card.css");
+@import url("navigation.css");
+
+.box {
+    display: flex !important;
+}
+
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+}
+
+.fullScreen {
+    width: 100vw;
+    height: 100vh;
+}
+
+.fullHeight {
+    height: 100vh;
+}
+
+.fullWidth {
+    width: 100vw;
+}
+
+.containerMax {
+    width: inherit;
+    height: inherit;
+}
+
+.containerHeight {
+    height: inherit;
+}
+
+.containerWidth {
+    width: inherit;
+}
+
+* {
+    box-sizing: border-box !important;
+}
