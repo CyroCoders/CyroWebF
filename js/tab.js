@@ -43,7 +43,6 @@ function getDragAfterElement(tabBar, y) {
 function activate(tab) {
 	if(document.querySelector('.tab.active')) document.querySelectorAll('.tab.active').forEach(active=>active.classList.remove('active'));
 	tab.classList.add('active');
-	console.log(tab.id)
 }
 
 function closeTab(closeButton) {
