@@ -18,3 +18,4 @@ var navigationReady = document.createEvent('Event');
 include("navigation.js");
 include("gravity.js");
 include("card.js");
+include("tab.js");
