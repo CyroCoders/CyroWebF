@@ -1,0 +1,41 @@
+.tab-area {
+    width: 40vw;
+    min-width: 500px;
+    margin: 0;
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+}
+
+.tab-area .tab {
+    height: 48px;
+    min-width: 128px;
+    width: min-content;
+    max-width: 172px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    opacity: .8;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    transition: .3s;
+}
+
+.tab-area .tab .close {
+    display: none;
+    transition: .3s;
+}
+
+.tab-area .tab:hover .close {
+    display: initial;
+    transition: .3s;
+}
+
+.tab-area .tab.active {
+    opacity: 1;
+}
+
+.tab-area .tab.dragging {
+    opacity: .5;
+    transition: 0.3s;
+}
