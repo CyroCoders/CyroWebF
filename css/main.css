@@ -1,6 +1,7 @@
 @import url("gravity.css");
 @import url("card.css");
 @import url("navigation.css");
+@import url("tab.css");
 
 .box {
     display: flex !important;
