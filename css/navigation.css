@@ -96,6 +96,7 @@ nav .nav-links ul {
     display: flex;
     flex-direction: row;
     align-items: center;
+    height: 100%;
     margin: 0;
 }
 
@@ -109,16 +110,15 @@ nav.collapsible .nav-links ul {
 nav .nav-links ul li {
     list-style: none;
     padding-inline: 20px;
-    height: 72px;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
 }
 
-nav div.nav-links ul li a {
+nav .nav-links ul li a {
     text-decoration: inherit;
     color: inherit;
-    height: 72px;
     padding-block: 24px;
 }
