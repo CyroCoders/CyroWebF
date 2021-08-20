@@ -1,4 +1,3 @@
-console.log("Hola From GravityJS")
 Array.prototype.forEach.call(document.getElementsByClassName("box"),(box)=>{
     box.getAttribute("boxAlign").split(" ").forEach((attr) =>{
         box.className = box.className + " " + attr;
