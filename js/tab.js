@@ -49,4 +49,4 @@ function updateTabs() {
 	}
 }
 
-document.on('load', updateTabs());
+document.addEventListener('load', updateTabs());
