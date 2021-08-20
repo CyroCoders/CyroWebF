@@ -49,4 +49,4 @@ function updateTabs() {
 	}
 }
 
-updateTabs();
+document.on('load', updateTabs());
