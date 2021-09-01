@@ -1,5 +1,8 @@
+boxAlignAttributes = ["top","bottom","left","right","verticalCenter","horizontalCenter"]
+
 Array.prototype.forEach.call(document.getElementsByClassName("box"),(box)=>{
     box.getAttribute("boxAlign").split(" ").forEach((attr) =>{
+        if(.includes(attr))
         box.className = box.className + " " + attr;
     });
     
